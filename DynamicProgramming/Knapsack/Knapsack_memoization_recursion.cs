@@ -17,6 +17,8 @@ namespace DynamicProgramming.Knapsack
         public Knapsack_memoization_recursion(int[] profits, int[] weights, int capacity)
         {
             if (profits.Length != weights.Length) throw new Exception("Number of profit items should match weights");
+            if (capacity <= 0) throw new Exception("Capacity should be more than 0");
+            if (profits.Length == 0) throw new Exception("There should be at least 1 item");
 
             this.profits = profits;
             this.weights = weights;

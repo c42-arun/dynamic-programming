@@ -11,8 +11,9 @@ namespace DynamicProgramming
     {
         static void Main(string[] args)
         {
-            //KnapsackBruteForce();
+            KnapsackBruteForce();
             KnapsackMemoization();
+            KnapsackBottomUp();
 
             Console.ReadLine();
         }
@@ -26,7 +27,7 @@ namespace DynamicProgramming
 
             int maxProfit = knapsack.FindMaxProfit();
 
-            Console.WriteLine($"Maximum profit is {maxProfit}");
+            Console.WriteLine($"Maximum profit by brute force is:  {maxProfit}");
         }
 
         public static void KnapsackMemoization()
@@ -38,7 +39,19 @@ namespace DynamicProgramming
 
             int maxProfit = knapsack.FindMaxProfit();
 
-            Console.WriteLine($"Maximum profit is {maxProfit}");
+            Console.WriteLine($"Maximum profit by memoization is: {maxProfit}");
+        }
+
+        public static void KnapsackBottomUp()
+        {
+            int[] profits = new[] { 1, 6, 10, 16 };
+            int[] weights = new[] { 1, 2, 3, 5 };
+
+            var knapsack = new Knapsack_bottomup(profits, weights, 6);
+
+            int maxProfit = knapsack.FindMaxProfit();
+
+            Console.WriteLine($"Maximum profit by bottom up approach is: {maxProfit}");
         }
     }
 }
