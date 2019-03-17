@@ -77,7 +77,45 @@ namespace DynamicProgramming.Knapsack
                 }
             }
 
+            PrintSelectedItems();
+
             return _profitMatrix[profits.Length - 1, capacity];
+        }
+
+        private void PrintSelectedItems()
+        {
+            // take the max profit at bottom right corner
+            int currentProfit = _profitMatrix[profits.Length - 1, capacity];
+            int currentCapacity = capacity;
+            List<int> selectedItemWeights = new List<int>();
+
+            for(int n = profits.Length - 1; n > 0; n--)
+            {
+                if (_profitMatrix[n-1, currentCapacity] != currentProfit)
+                {
+                    // this means the current item contributed to this profit
+                    // so add this item to the list of contributors 
+                    selectedItemWeights.Add(weights[n]);
+
+                    // compute remaining capacity and profit to account for
+                    currentProfit = _profitMatrix[n, currentCapacity] - profits[n];
+                    currentCapacity = currentCapacity - weights[n];
+                }
+            }
+
+            // if we still have profit left it should have come from the first item
+            // coz we only loop down till the second item in previous for loop as the check in line 94
+            // compares with previous item weight that would fail if we indexed for the first item
+            if (currentProfit > 0)
+            {
+                selectedItemWeights.Add(weights[0]);
+            }
+
+            Console.WriteLine("Selected weights are: ");
+            foreach(int weight in selectedItemWeights)
+            {
+                Console.WriteLine(weight);
+            }
         }
     }
 }

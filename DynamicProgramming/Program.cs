@@ -23,7 +23,7 @@ namespace DynamicProgramming
             int[] profits = new[] { 1, 6, 10, 16 };
             int[] weights = new[] { 1, 2, 3, 5 };
 
-            var knapsack = new Knapsack_bruteforce_recursion(profits, weights, 6);
+            var knapsack = new Knapsack_bruteforce_recursion(profits, weights, 7);
 
             int maxProfit = knapsack.FindMaxProfit();
 
@@ -35,7 +35,7 @@ namespace DynamicProgramming
             int[] profits = new[] { 1, 6, 10, 16 };
             int[] weights = new[] { 1, 2, 3, 5 };
 
-            var knapsack = new Knapsack_memoization_recursion(profits, weights, 6);
+            var knapsack = new Knapsack_memoization_recursion(profits, weights, 7);
 
             int maxProfit = knapsack.FindMaxProfit();
 
@@ -47,7 +47,7 @@ namespace DynamicProgramming
             int[] profits = new[] { 1, 6, 10, 16 };
             int[] weights = new[] { 1, 2, 3, 5 };
 
-            var knapsack = new Knapsack_bottomup(profits, weights, 6);
+            var knapsack = new Knapsack_bottomup(profits, weights, 7);
 
             int maxProfit = knapsack.FindMaxProfit();
 
