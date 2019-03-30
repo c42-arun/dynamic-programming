@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EqualSubsetBottomUp.cs" />
     <Compile Include="Knapsack\Knapsack_bottomup.cs" />
     <Compile Include="Knapsack\Knapsack_memoization_recursion.cs" />
     <Compile Include="Knapsack\Knapsack_bruteforce_recursion.cs" />

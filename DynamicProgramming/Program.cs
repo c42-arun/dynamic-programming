@@ -11,9 +11,11 @@ namespace DynamicProgramming
     {
         static void Main(string[] args)
         {
-            KnapsackBruteForce();
-            KnapsackMemoization();
-            KnapsackBottomUp();
+            //KnapsackBruteForce();
+            //KnapsackMemoization();
+            //KnapsackBottomUp();
+
+            EqualSubsetsBottomUp();
 
             Console.ReadLine();
         }
@@ -52,6 +54,17 @@ namespace DynamicProgramming
             int maxProfit = knapsack.FindMaxProfit();
 
             Console.WriteLine($"Maximum profit by bottom up approach is: {maxProfit}");
+        }
+
+        public static void EqualSubsetsBottomUp()
+        {
+            int[] nums = new int[] { 2, 4, 6, 8 };
+
+            EqualSubsetBottomUp es = new EqualSubsetBottomUp();
+
+            bool canPartition = es.CanPartition(nums);
+
+            Console.WriteLine($"Can partition? {(canPartition ? "YES" : "NO")}");
         }
     }
 }
