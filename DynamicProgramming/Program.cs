@@ -1,4 +1,5 @@
 ﻿using DynamicProgramming.Knapsack;
+using DynamicProgramming.SubsetSum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,9 @@ namespace DynamicProgramming
             //KnapsackMemoization();
             //KnapsackBottomUp();
 
-            EqualSubsetsBottomUp();
+            //EqualSubsetsBottomUp();
+
+            SubsetSumBruteForce();
 
             Console.ReadLine();
         }
@@ -65,6 +68,17 @@ namespace DynamicProgramming
             bool canPartition = es.CanPartition(nums);
 
             Console.WriteLine($"Can partition? {(canPartition ? "YES" : "NO")}");
+        }
+
+        public static void SubsetSumBruteForce()
+        {
+            int[] nums = new int[] { 1, 2, 3, 7 };
+
+            SubsetSumBruteForceRecursion ss = new SubsetSumBruteForceRecursion();
+
+            bool canFind = ss.CanFindSubsetToSum(nums, 14);
+
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
         }
     }
 }

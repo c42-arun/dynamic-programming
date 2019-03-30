@@ -49,6 +49,7 @@
     <Compile Include="Knapsack\Knapsack_bruteforce_recursion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubsetSum\SubsetSumBruteForceRecursion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
