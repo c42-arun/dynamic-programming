@@ -31,6 +31,7 @@ namespace DynamicProgramming.SubsetSum
                     return true;
             }
 
+            // path 2: exclude the number - in which case the remaining sum remains unchanged and we recurse to the next number
             return CanFindSubset(nums, remainingSum, currentIndex + 1);
         }
     }

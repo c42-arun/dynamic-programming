@@ -19,6 +19,8 @@ namespace DynamicProgramming
             //EqualSubsetsBottomUp();
 
             SubsetSumBruteForce();
+            SubsetSumMemoization();
+            SubsetSumBottomupTabulation();
 
             Console.ReadLine();
         }
@@ -52,7 +54,7 @@ namespace DynamicProgramming
             int[] profits = new[] { 1, 6, 10, 16 };
             int[] weights = new[] { 1, 2, 3, 5 };
 
-            var knapsack = new Knapsack_bottomup(profits, weights, 7);
+            var knapsack = new Knapsack_bottomup_tabulation(profits, weights, 7);
 
             int maxProfit = knapsack.FindMaxProfit();
 
@@ -76,7 +78,29 @@ namespace DynamicProgramming
 
             SubsetSumBruteForceRecursion ss = new SubsetSumBruteForceRecursion();
 
-            bool canFind = ss.CanFindSubsetToSum(nums, 14);
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
+
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+        }
+
+        public static void SubsetSumMemoization()
+        {
+            int[] nums = new int[] { 1, 2, 3, 7 };
+
+            SubsetSumMemoizationRecursion ss = new SubsetSumMemoizationRecursion();
+
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
+
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+        }
+
+        public static void SubsetSumBottomupTabulation()
+        {
+            int[] nums = new int[] { 1, 2, 3, 7 };
+
+            SubsetSumBottomupTabulation ss = new SubsetSumBottomupTabulation();
+
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
 
             Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
         }

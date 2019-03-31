@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DynamicProgramming.Knapsack
 {
-    public class Knapsack_bottomup
+    public class Knapsack_bottomup_tabulation
     {
         private readonly int[] profits;
         private readonly int[] weights;
@@ -14,7 +14,7 @@ namespace DynamicProgramming.Knapsack
 
         private int[,] _profitMatrix;
 
-        public Knapsack_bottomup(int[] profits, int[] weights, int capacity)
+        public Knapsack_bottomup_tabulation(int[] profits, int[] weights, int capacity)
         {
             if (profits.Length != weights.Length) throw new Exception("Number of profit items should match weights");
             if (capacity <= 0) throw new Exception("Capacity should be more than 0");
