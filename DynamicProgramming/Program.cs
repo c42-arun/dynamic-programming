@@ -82,7 +82,7 @@ namespace DynamicProgramming
 
             var equalSubsets = new EqualSubsets_bruteforce_recursion();
 
-            bool equalSubsetsExist = equalSubsets.ContainsEqualSubsets(nums);
+            bool equalSubsetsExist = equalSubsets.CanPartition(nums);
 
             Console.WriteLine($"Brute Force: Does equal subsets exist?: {(equalSubsetsExist ? "Yes" : "No")}");
         }
@@ -93,7 +93,7 @@ namespace DynamicProgramming
 
             var equalSubsets = new EqualSubsets_memoization_recursion();
 
-            bool equalSubsetsExist = equalSubsets.ContainsEqualSubsets(nums);
+            bool equalSubsetsExist = equalSubsets.CanPartition(nums);
 
             Console.WriteLine($"Memoization: Does equal subsets exist?: {(equalSubsetsExist ? "Yes" : "No")}");
         }
@@ -102,7 +102,7 @@ namespace DynamicProgramming
         {
             int[] nums = new int[] { 2, 4, 6, 8 };
 
-            EqualSubsetBottomUp es = new EqualSubsetBottomUp();
+            EqualSubsets_bottomup es = new EqualSubsets_bottomup();
 
             bool equalSubsetsExist = es.CanPartition(nums);
 

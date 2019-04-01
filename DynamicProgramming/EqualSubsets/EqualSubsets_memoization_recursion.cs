@@ -10,7 +10,7 @@ namespace DynamicProgramming.EqualSubsets
     {
         private bool?[,] memoArray;
 
-        public bool ContainsEqualSubsets(int[] nums)
+        public bool CanPartition(int[] nums)
         {
             if (nums.Length == 0) return true;
 

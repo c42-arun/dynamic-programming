@@ -8,7 +8,7 @@ namespace DynamicProgramming.EqualSubsets
 {
     public class EqualSubsets_bruteforce_recursion
     {
-        public bool ContainsEqualSubsets(int[] nums)
+        public bool CanPartition(int[] nums)
         {
             if (nums.Length == 0) return true;
 
