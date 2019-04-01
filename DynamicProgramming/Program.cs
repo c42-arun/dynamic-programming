@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicProgramming.EqualSubsets;
 
 namespace DynamicProgramming
 {
@@ -11,12 +12,17 @@ namespace DynamicProgramming
     {
         static void Main(string[] args)
         {
-            KnapsackBruteForce();
-            KnapsackMemoization();
-            KnapsackBottomUp();
+            //KnapsackBruteForce();
+            //KnapsackMemoization();
+            //KnapsackBottomUp();
+
+            EqualSubsetsBruteForce();
+            EqualSubsetsMemoization();
 
             Console.ReadLine();
         }
+
+        #region Knapsack 1/0
 
         public static void KnapsackBruteForce()
         {
@@ -53,5 +59,32 @@ namespace DynamicProgramming
 
             Console.WriteLine($"Maximum profit by bottom up approach is: {maxProfit}");
         }
+
+        #endregion
+
+        #region Equal Subsets
+        public static void EqualSubsetsBruteForce()
+        {
+            int[] nums = new[] { 8, 10, 16 };
+
+            var equalSubsets = new EqualSubsets_bruteforce_recursion();
+
+            bool exists = equalSubsets.ContainsEqualSubsets(nums);
+
+            Console.WriteLine($"Brute Force: Does equal subsets exist?: {(exists ? "Yes" : "No")}");
+        }
+
+        public static void EqualSubsetsMemoization()
+        {
+            int[] nums = new[] { 6, 10, 16 };
+
+            var equalSubsets = new EqualSubsets_memoization_recursion();
+
+            bool exists = equalSubsets.ContainsEqualSubsets(nums);
+
+            Console.WriteLine($"Memoization: Does equal subsets exist?: {(exists ? "Yes" : "No")}");
+        }
+
+        #endregion
     }
 }
