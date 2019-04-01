@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicProgramming.EqualSubsets;
+using DynamicProgramming.MinimumSubsetsDifference;
 
 namespace DynamicProgramming
 {
@@ -30,6 +31,10 @@ namespace DynamicProgramming
             EqualSubsetSumBruteForce();
             EqualSubsetSumMemoization();
             EqualSubsetSumBottomupTabulation();
+
+            Console.WriteLine("\nMinimum subsets difference:");
+
+            MinimumSubsetsDifferenceBruteForce();
 
             Console.ReadLine();
         }
@@ -145,6 +150,28 @@ namespace DynamicProgramming
 
             Console.WriteLine($"Can find a subset with sum? {(canFind ? "Yes" : "No")}");
         }
+
+        #endregion
+
+        #region Minimum subsets difference
+
+        public static void MinimumSubsetsDifferenceBruteForce()
+        {
+            MinimumSubsetsDifferenceBruteForceRecursion m = new MinimumSubsetsDifferenceBruteForceRecursion();
+
+            int[] nums = { 1, 2, 3, 9 };
+            int minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+
+            nums = new int[] { 1, 2, 7, 1, 5 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+            
+            nums = new int[] { 1, 3, 100, 4 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+        }
+
 
         #endregion
     }
