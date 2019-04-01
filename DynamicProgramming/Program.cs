@@ -1,10 +1,10 @@
 ﻿using DynamicProgramming.Knapsack;
+using DynamicProgramming.SubsetSum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DynamicProgramming.EqualSubsets;
 
 namespace DynamicProgramming
 {
@@ -16,13 +16,14 @@ namespace DynamicProgramming
             //KnapsackMemoization();
             //KnapsackBottomUp();
 
-            EqualSubsetsBruteForce();
-            EqualSubsetsMemoization();
+            //EqualSubsetsBottomUp();
+
+            SubsetSumBruteForce();
+            SubsetSumMemoization();
+            SubsetSumBottomupTabulation();
 
             Console.ReadLine();
         }
-
-        #region Knapsack 1/0
 
         public static void KnapsackBruteForce()
         {
@@ -53,38 +54,55 @@ namespace DynamicProgramming
             int[] profits = new[] { 1, 6, 10, 16 };
             int[] weights = new[] { 1, 2, 3, 5 };
 
-            var knapsack = new Knapsack_bottomup(profits, weights, 7);
+            var knapsack = new Knapsack_bottomup_tabulation(profits, weights, 7);
 
             int maxProfit = knapsack.FindMaxProfit();
 
             Console.WriteLine($"Maximum profit by bottom up approach is: {maxProfit}");
         }
 
-        #endregion
-
-        #region Equal Subsets
-        public static void EqualSubsetsBruteForce()
+        public static void EqualSubsetsBottomUp()
         {
-            int[] nums = new[] { 8, 10, 16 };
+            int[] nums = new int[] { 2, 4, 6, 8 };
 
-            var equalSubsets = new EqualSubsets_bruteforce_recursion();
+            EqualSubsetBottomUp es = new EqualSubsetBottomUp();
 
-            bool exists = equalSubsets.ContainsEqualSubsets(nums);
+            bool canPartition = es.CanPartition(nums);
 
-            Console.WriteLine($"Brute Force: Does equal subsets exist?: {(exists ? "Yes" : "No")}");
+            Console.WriteLine($"Can partition? {(canPartition ? "YES" : "NO")}");
         }
 
-        public static void EqualSubsetsMemoization()
+        public static void SubsetSumBruteForce()
         {
-            int[] nums = new[] { 6, 10, 16 };
+            int[] nums = new int[] { 1, 2, 3, 7 };
 
-            var equalSubsets = new EqualSubsets_memoization_recursion();
+            SubsetSumBruteForceRecursion ss = new SubsetSumBruteForceRecursion();
 
-            bool exists = equalSubsets.ContainsEqualSubsets(nums);
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
 
-            Console.WriteLine($"Memoization: Does equal subsets exist?: {(exists ? "Yes" : "No")}");
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
         }
 
-        #endregion
+        public static void SubsetSumMemoization()
+        {
+            int[] nums = new int[] { 1, 2, 3, 7 };
+
+            SubsetSumMemoizationRecursion ss = new SubsetSumMemoizationRecursion();
+
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
+
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+        }
+
+        public static void SubsetSumBottomupTabulation()
+        {
+            int[] nums = new int[] { 1, 2, 3, 7 };
+
+            SubsetSumBottomupTabulation ss = new SubsetSumBottomupTabulation();
+
+            bool canFind = ss.CanFindSubsetToSum(nums, 13);
+
+            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+        }
     }
 }
