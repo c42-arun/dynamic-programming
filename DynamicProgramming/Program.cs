@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicProgramming.EqualSubsets;
 
 namespace DynamicProgramming
 {
@@ -12,18 +13,28 @@ namespace DynamicProgramming
     {
         static void Main(string[] args)
         {
-            //KnapsackBruteForce();
-            //KnapsackMemoization();
-            //KnapsackBottomUp();
+            Console.WriteLine("\nKnapsack 0/1");
 
-            //EqualSubsetsBottomUp();
+            KnapsackBruteForce();
+            KnapsackMemoization();
+            KnapsackBottomUp();
 
-            SubsetSumBruteForce();
-            SubsetSumMemoization();
-            SubsetSumBottomupTabulation();
+            Console.WriteLine("\nEqual Subset Sum Partition:");
+
+            EqualSubsetsBruteForce();
+            EqualSubsetsMemoization();
+            EqualSubsetsBottomUp();
+
+            Console.WriteLine("\nEqual Subsets Sum:");
+
+            EqualSubsetSumBruteForce();
+            EqualSubsetSumMemoization();
+            EqualSubsetSumBottomupTabulation();
 
             Console.ReadLine();
         }
+
+        #region Knapsack
 
         public static void KnapsackBruteForce()
         {
@@ -61,18 +72,48 @@ namespace DynamicProgramming
             Console.WriteLine($"Maximum profit by bottom up approach is: {maxProfit}");
         }
 
+        #endregion Knapsack
+
+        #region Equal Subsets
+
+        public static void EqualSubsetsBruteForce()
+        {
+            int[] nums = new[] { 6, 10, 16 };
+
+            var equalSubsets = new EqualSubsets_bruteforce_recursion();
+
+            bool equalSubsetsExist = equalSubsets.ContainsEqualSubsets(nums);
+
+            Console.WriteLine($"Brute Force: Does equal subsets exist?: {(equalSubsetsExist ? "Yes" : "No")}");
+        }
+
+        public static void EqualSubsetsMemoization()
+        {
+            int[] nums = new[] { 6, 10, 16 };
+
+            var equalSubsets = new EqualSubsets_memoization_recursion();
+
+            bool equalSubsetsExist = equalSubsets.ContainsEqualSubsets(nums);
+
+            Console.WriteLine($"Memoization: Does equal subsets exist?: {(equalSubsetsExist ? "Yes" : "No")}");
+        }
+
         public static void EqualSubsetsBottomUp()
         {
             int[] nums = new int[] { 2, 4, 6, 8 };
 
             EqualSubsetBottomUp es = new EqualSubsetBottomUp();
 
-            bool canPartition = es.CanPartition(nums);
+            bool equalSubsetsExist = es.CanPartition(nums);
 
-            Console.WriteLine($"Can partition? {(canPartition ? "YES" : "NO")}");
+            Console.WriteLine($"Brute Force: Does equal subsets exist?: {(equalSubsetsExist ? "Yes" : "No")}");
         }
 
-        public static void SubsetSumBruteForce()
+        #endregion
+
+        #region Equal Subsets Sum
+
+        public static void EqualSubsetSumBruteForce()
         {
             int[] nums = new int[] { 1, 2, 3, 7 };
 
@@ -80,10 +121,10 @@ namespace DynamicProgramming
 
             bool canFind = ss.CanFindSubsetToSum(nums, 13);
 
-            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+            Console.WriteLine($"Can find a subset with sum? {(canFind ? "Yes" : "No")}");
         }
 
-        public static void SubsetSumMemoization()
+        public static void EqualSubsetSumMemoization()
         {
             int[] nums = new int[] { 1, 2, 3, 7 };
 
@@ -91,10 +132,10 @@ namespace DynamicProgramming
 
             bool canFind = ss.CanFindSubsetToSum(nums, 13);
 
-            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+            Console.WriteLine($"Can find a subset with sum? {(canFind ? "Yes" : "No")}");
         }
 
-        public static void SubsetSumBottomupTabulation()
+        public static void EqualSubsetSumBottomupTabulation()
         {
             int[] nums = new int[] { 1, 2, 3, 7 };
 
@@ -102,7 +143,9 @@ namespace DynamicProgramming
 
             bool canFind = ss.CanFindSubsetToSum(nums, 13);
 
-            Console.WriteLine($"Can find a subset? {(canFind ? "YES" : "NO")}");
+            Console.WriteLine($"Can find a subset with sum? {(canFind ? "Yes" : "No")}");
         }
+
+        #endregion
     }
 }
