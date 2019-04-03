@@ -49,6 +49,8 @@
     <Compile Include="Knapsack\Knapsack_bottomup_tabulation.cs" />
     <Compile Include="Knapsack\Knapsack_memoization_recursion.cs" />
     <Compile Include="Knapsack\Knapsack_bruteforce_recursion.cs" />
+    <Compile Include="MinimumSubsetsDifference\MinimumSubsetsDifferenceBottomupTabulation.cs" />
+    <Compile Include="MinimumSubsetsDifference\MinimumSubsetsDifferenceMemoizationRecursion.cs" />
     <Compile Include="MinimumSubsetsDifference\MinimumSubsetsDifferenceBruteForceRecursion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

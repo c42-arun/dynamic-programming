@@ -35,6 +35,8 @@ namespace DynamicProgramming
             Console.WriteLine("\nMinimum subsets difference:");
 
             MinimumSubsetsDifferenceBruteForce();
+            MinimumSubsetsDifferenceMemoization();
+            MinimumSubsetsDifferenceBottomupTabulation();
 
             Console.ReadLine();
         }
@@ -157,21 +159,54 @@ namespace DynamicProgramming
 
         public static void MinimumSubsetsDifferenceBruteForce()
         {
-            MinimumSubsetsDifferenceBruteForceRecursion m = new MinimumSubsetsDifferenceBruteForceRecursion();
+            var m = new MinimumSubsetsDifferenceBruteForceRecursion();
 
             int[] nums = { 1, 2, 3, 9 };
             int minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
-            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+            Console.WriteLine($"Set 1: Minimum subsets difference is {minDiff}\n");
 
             nums = new int[] { 1, 2, 7, 1, 5 };
             minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
-            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+            Console.WriteLine($"Set 2: Minimum subsets difference is {minDiff}\n");
             
             nums = new int[] { 1, 3, 100, 4 };
             minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
-            Console.WriteLine($"Minimum subsets difference is {minDiff}");
+            Console.WriteLine($"Set 3: Minimum subsets difference is {minDiff}\n");
         }
 
+        public static void MinimumSubsetsDifferenceMemoization()
+        {
+            var m = new MinimumSubsetsDifferenceMemoizationRecursion();
+
+            int[] nums = { 1, 2, 3, 9 };
+            int minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 1: Minimum subsets difference is {minDiff}\n");
+
+            nums = new int[] { 1, 2, 7, 1, 5 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 2: Minimum subsets difference is {minDiff}\n");
+
+            nums = new int[] { 1, 3, 100, 4 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 3: Minimum subsets difference is {minDiff}\n");
+        }
+
+        public static void MinimumSubsetsDifferenceBottomupTabulation()
+        {
+            var m = new MinimumSubsetsDifferenceBottomupTabulation();
+
+            int[] nums = { 1, 2, 3, 9 };
+            int minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 1: Minimum subsets difference is {minDiff}\n");
+
+            nums = new int[] { 1, 2, 7, 1, 5 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 2: Minimum subsets difference is {minDiff}\n");
+
+            nums = new int[] { 1, 3, 100, 4 };
+            minDiff = m.GetMinimumDifferenceFromTwoSubsets(nums);
+            Console.WriteLine($"Set 3: Minimum subsets difference is {minDiff}\n");
+        }
 
         #endregion
     }
