@@ -15,31 +15,29 @@ namespace DynamicProgramming
         static void Main(string[] args)
         {
             Console.WriteLine("\nKnapsack 0/1");
-
             KnapsackBruteForce();
             KnapsackMemoization();
             KnapsackBottomUp();
 
             Console.WriteLine("\nEqual Subset Sum Partition:");
-
             EqualSubsetsBruteForce();
             EqualSubsetsMemoization();
             EqualSubsetsBottomUp();
 
             Console.WriteLine("\nEqual Subsets Sum:");
-
             EqualSubsetSumBruteForce();
             EqualSubsetSumMemoization();
             EqualSubsetSumBottomupTabulation();
 
             Console.WriteLine("\nMinimum subsets difference:");
-
             MinimumSubsetsDifferenceBruteForce();
             MinimumSubsetsDifferenceMemoization();
             MinimumSubsetsDifferenceBottomupTabulation();
 
             Console.WriteLine("\nSubsets count:");
             SubsetsCountBruteForce();
+            SubsetsCountMemoization();
+            SubsetsCountTabulation();
 
             Console.ReadLine();
         }
@@ -223,9 +221,35 @@ namespace DynamicProgramming
             Console.WriteLine($"Set 1: Subsets that add up to the sum are {count}\n");
 
             nums = new int[]{ 1, 2, 7, 1, 5 };
-            count = m.CountOfSubsetsThatCouldSum(nums, 9);
+            count = m.CountOfSubsetsThatCouldSum(nums, 8);
             Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
         }
+        public static void SubsetsCountMemoization()
+        {
+            var m = new SubsetsCountMemoizationRecursion();
+
+            int[] nums = { 1, 1, 2, 3 };
+            int count = m.CountOfSubsetsThatCouldSum(nums, 4);
+            Console.WriteLine($"Set 1: Subsets that add up to the sum are {count}\n");
+
+            nums = new int[] { 1, 2, 7, 1, 5 };
+            count = m.CountOfSubsetsThatCouldSum(nums, 8);
+            Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
+        }
+
+        public static void SubsetsCountTabulation()
+        {
+            var m = new SubsetsCountTabulation();
+
+            int[] nums = { 1, 1, 2, 3 };
+            int count = m.CountOfSubsetsThatCouldSum(nums, 4);
+            Console.WriteLine($"Set 1: Subsets that add up to the sum are {count}\n");
+
+            nums = new int[] { 1, 2, 7, 1, 5 };
+            count = m.CountOfSubsetsThatCouldSum(nums, 8);
+            Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
+        }
+
         #endregion
     }
 }

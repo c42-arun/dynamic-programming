@@ -54,6 +54,8 @@
     <Compile Include="MinimumSubsetsDifference\MinimumSubsetsDifferenceBruteForceRecursion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubsetsCount\SubsetsCountTabulation.cs" />
+    <Compile Include="SubsetsCount\SubsetsCountMemoizationRecursion.cs" />
     <Compile Include="SubsetsCount\SubsetsCountBruteForceRecursion.cs" />
     <Compile Include="SubsetSum\SubsetSumBottomupTabulation.cs" />
     <Compile Include="SubsetSum\SubsetSumMemoizationRecursion.cs" />
