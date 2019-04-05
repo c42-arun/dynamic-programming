@@ -38,6 +38,9 @@ namespace DynamicProgramming
             MinimumSubsetsDifferenceMemoization();
             MinimumSubsetsDifferenceBottomupTabulation();
 
+            Console.WriteLine("\nSubsets count:");
+            SubsetsCountBruteForce();
+
             Console.ReadLine();
         }
 
@@ -208,6 +211,21 @@ namespace DynamicProgramming
             Console.WriteLine($"Set 3: Minimum subsets difference is {minDiff}\n");
         }
 
+        #endregion
+
+        #region Subsets Count
+        public static void SubsetsCountBruteForce()
+        {
+            var m = new SubsetsCountBruteForceRecursion();
+
+            int[] nums = { 1, 1, 2, 3 };
+            int count = m.CountOfSubsetsThatCouldSum(nums, 4);
+            Console.WriteLine($"Set 1: Subsets that add up to the sum are {count}\n");
+
+            nums = new int[]{ 1, 2, 7, 1, 5 };
+            count = m.CountOfSubsetsThatCouldSum(nums, 9);
+            Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
+        }
         #endregion
     }
 }
