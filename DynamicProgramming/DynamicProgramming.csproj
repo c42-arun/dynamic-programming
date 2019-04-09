@@ -60,6 +60,7 @@
     <Compile Include="SubsetSum\SubsetSumBottomupTabulation.cs" />
     <Compile Include="SubsetSum\SubsetSumMemoizationRecursion.cs" />
     <Compile Include="SubsetSum\SubsetSumBruteForceRecursion.cs" />
+    <Compile Include="TargetSum\TargetSum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

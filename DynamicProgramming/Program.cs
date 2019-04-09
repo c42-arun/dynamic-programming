@@ -39,6 +39,9 @@ namespace DynamicProgramming
             SubsetsCountMemoization();
             SubsetsCountTabulation();
 
+            Console.WriteLine("\nTarget Sum:");
+            TargetSum();
+
             Console.ReadLine();
         }
 
@@ -250,6 +253,23 @@ namespace DynamicProgramming
             Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
         }
 
+        #endregion
+
+        #region Target Sum 
+
+        public static void TargetSum()
+        {
+            var m = new TargetSum.TargetSum();
+
+            int[] nums = { 1, 2, 7, 1 };
+            int count = m.FindTargetSubsets(nums, 9);
+            Console.WriteLine($"Set 1: Subsets that add up to the sum are {count}\n");
+
+            nums = new[] {1, 1, 2, 3};
+            count = m.FindTargetSubsets(nums, 1);
+            Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
+
+        }
         #endregion
     }
 }
