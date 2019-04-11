@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DynamicProgramming.EqualSubsets;
 using DynamicProgramming.MinimumSubsetsDifference;
+using DynamicProgramming.UnboundedKnapsack;
 
 namespace DynamicProgramming
 {
@@ -42,8 +43,15 @@ namespace DynamicProgramming
             Console.WriteLine("\nTarget Sum:");
             TargetSum();
 
+            Console.WriteLine("\nUnbounded Knapsack:");
+            UnboundedKnapsackBruteForce();
+            UnboundedKnapsackMemoization();
+            UnboundedKnapsackTabulation();
+
             Console.ReadLine();
         }
+
+        #region Knapsack 0/1 pattern
 
         #region Knapsack
 
@@ -270,6 +278,55 @@ namespace DynamicProgramming
             Console.WriteLine($"Set 2: Subsets that add up to the sum are {count}\n");
 
         }
+        #endregion
+
+        #endregion Knapsack 0/1 pattern
+
+        #region Unbounded Knapsack pattern
+
+        #region Unbounded Knapsack
+
+        public static void UnboundedKnapsackBruteForce()
+        {
+            int[] profits = new[] { 15, 50, 60, 90 };
+            int[] weights = new[] { 1, 3, 4, 5 };
+            int capacity = 8;
+
+            var unboundedKnapsack = new UnboundedKnapsack_Recursion();
+
+            int maxProfit = unboundedKnapsack.SolveKnapsack(profits, weights, capacity);
+
+            Console.WriteLine($"Unbounded Knapsack: Maximum profit by brute force is:  {maxProfit}");
+        }
+
+        public static void UnboundedKnapsackMemoization()
+        {
+            int[] profits = new[] { 15, 50, 60, 90 };
+            int[] weights = new[] { 1, 3, 4, 5 };
+            int capacity = 8;
+
+            var unboundedKnapsack = new UnboundedKnapsack_Memoization();
+
+            int maxProfit = unboundedKnapsack.SolveKnapsack(profits, weights, capacity);
+
+            Console.WriteLine($"Unbounded Knapsack: Maximum profit by memoization is:  {maxProfit}");
+        }
+
+        public static void UnboundedKnapsackTabulation()
+        {
+            int[] profits = new[] { 15, 50, 60, 90 };
+            int[] weights = new[] { 1, 3, 4, 5 };
+            int capacity = 8;
+
+            var unboundedKnapsack = new UnboundedKnapsack_Tabulation();
+
+            int maxProfit = unboundedKnapsack.SolveKnapsack(profits, weights, capacity);
+
+            Console.WriteLine($"Unbounded Knapsack: Maximum profit by bottom up tabulation is:  {maxProfit}");
+        }
+
+        #endregion
+
         #endregion
     }
 }
