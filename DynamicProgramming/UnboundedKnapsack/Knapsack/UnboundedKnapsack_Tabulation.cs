@@ -21,7 +21,7 @@ namespace DynamicProgramming.UnboundedKnapsack.Knapsack
 
             // Step 2: Fill up row 0 i.e we consider the item at index == 0
             // we could include as many number of this items provided the resulting weight is <= capacity
-            // we start from as cell (0, 00 is already filled in step 1
+            // we start from as cell (0, 0) is already filled in step 1
             int prevWeight = 0;
             for (int c = 1; c <= capacity; c++)
             {
@@ -29,6 +29,10 @@ namespace DynamicProgramming.UnboundedKnapsack.Knapsack
                 {
                     dp[0, c] = dp[0, c-1] + profits[0];
                     prevWeight = prevWeight + weights[0]; ;
+                }
+                else
+                {
+                    dp[0, c] = dp[0, c - 1]; // this cell's weight would remain same as previous
                 }
             }
 
