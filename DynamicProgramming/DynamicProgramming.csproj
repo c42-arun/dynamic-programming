@@ -64,6 +64,9 @@
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Tabulation.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Memoization.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Recursion.cs" />
+    <Compile Include="UnboundedKnapsack\RodCutting\RodCutting_Memoization.cs" />
+    <Compile Include="UnboundedKnapsack\RodCutting\RodCutting_Recursion.cs" />
+    <Compile Include="UnboundedKnapsack\RodCutting\RodCutting_Tabulation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

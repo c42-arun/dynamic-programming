@@ -11,6 +11,7 @@ using DynamicProgramming.Knapsack_0_1.SubsetSum;
 using DynamicProgramming.Knapsack_0_1.TargetSum;
 using DynamicProgramming.UnboundedKnapsack;
 using DynamicProgramming.UnboundedKnapsack.Knapsack;
+using DynamicProgramming.UnboundedKnapsack.RodCutting;
 
 namespace DynamicProgramming
 {
@@ -18,38 +19,43 @@ namespace DynamicProgramming
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\nKnapsack 0/1");
-            KnapsackBruteForce();
-            KnapsackMemoization();
-            KnapsackBottomUp();
+            //Console.WriteLine("\nKnapsack 0/1 => Knapsack");
+            //KnapsackBruteForce();
+            //KnapsackMemoization();
+            //KnapsackBottomUp();
 
-            Console.WriteLine("\nEqual Subset Sum Partition:");
-            EqualSubsetsBruteForce();
-            EqualSubsetsMemoization();
-            EqualSubsetsBottomUp();
+            //Console.WriteLine("\nKnapsack 0/1 => Equal Subset Sum Partition:");
+            //EqualSubsetsBruteForce();
+            //EqualSubsetsMemoization();
+            //EqualSubsetsBottomUp();
 
-            Console.WriteLine("\nEqual Subsets Sum:");
-            EqualSubsetSumBruteForce();
-            EqualSubsetSumMemoization();
-            EqualSubsetSumBottomupTabulation();
+            //Console.WriteLine("\nKnapsack 0/1 => Equal Subsets Sum:");
+            //EqualSubsetSumBruteForce();
+            //EqualSubsetSumMemoization();
+            //EqualSubsetSumBottomupTabulation();
 
-            Console.WriteLine("\nMinimum subsets difference:");
-            MinimumSubsetsDifferenceBruteForce();
-            MinimumSubsetsDifferenceMemoization();
-            MinimumSubsetsDifferenceBottomupTabulation();
+            //Console.WriteLine("\nKnapsack 0/1 => Minimum subsets difference:");
+            //MinimumSubsetsDifferenceBruteForce();
+            //MinimumSubsetsDifferenceMemoization();
+            //MinimumSubsetsDifferenceBottomupTabulation();
 
-            Console.WriteLine("\nSubsets count:");
-            SubsetsCountBruteForce();
-            SubsetsCountMemoization();
-            SubsetsCountTabulation();
+            //Console.WriteLine("\nKnapsack 0/1 => Subsets count:");
+            //SubsetsCountBruteForce();
+            //SubsetsCountMemoization();
+            //SubsetsCountTabulation();
 
-            Console.WriteLine("\nTarget Sum:");
-            TargetSum();
+            //Console.WriteLine("\nKnapsack 0/1 => Target Sum:");
+            //TargetSum();
 
-            Console.WriteLine("\nUnbounded Knapsack:");
-            UnboundedKnapsackBruteForce();
-            UnboundedKnapsackMemoization();
-            UnboundedKnapsackTabulation();
+            //Console.WriteLine("\nUnbounded Knapsack: Knapsack");
+            //UnboundedKnapsackBruteForce();
+            //UnboundedKnapsackMemoization();
+            //UnboundedKnapsackTabulation();
+
+            //Console.WriteLine("\nUnbounded Knapsack: Rod Cutting");
+            RodCuttingBruteForce();
+            RodCuttingMemoization();
+            RodCuttingTabulation();
 
             Console.ReadLine();
         }
@@ -330,6 +336,38 @@ namespace DynamicProgramming
 
         #endregion
 
+        #region Rod Cutting
+        private static void RodCuttingBruteForce()
+        {
+            RodCutting_Recursion rc = new RodCutting_Recursion();
+            int[] lengths = { 1, 2, 3, 4, 5 };
+            int[] prices = { 2, 6, 7, 10, 13 };
+            int maxProfit = rc.SolveRodCutting(lengths, prices, 5);
+
+            Console.WriteLine($"Rod cutting: Maximum profit by brute force is:  {maxProfit}");
+        }
+
+        private static void RodCuttingMemoization()
+        {
+            RodCutting_Memoization rc = new RodCutting_Memoization();
+            int[] lengths = { 1, 2, 3, 4, 5 };
+            int[] prices = { 2, 6, 7, 10, 13 };
+            int maxProfit = rc.SolveRodCutting(lengths, prices, 5);
+
+            Console.WriteLine($"Rod cutting: Maximum profit by memoization is:  {maxProfit}");
+        }
+
+        private static void RodCuttingTabulation()
+        {
+            RodCutting_Tabulation rc = new RodCutting_Tabulation();
+            int[] lengths = { 1, 2, 3, 4, 5 };
+            int[] prices = { 2, 6, 7, 10, 13 };
+            int maxProfit = rc.SolveRodCutting(lengths, prices, 5);
+
+            Console.WriteLine($"Rod cutting: Maximum profit by tabulation is:  {maxProfit}");
+        }
+
+        #endregion  
         #endregion
     }
 }
