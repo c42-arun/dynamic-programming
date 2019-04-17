@@ -1,13 +1,16 @@
-﻿using DynamicProgramming.Knapsack;
-using DynamicProgramming.SubsetSum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DynamicProgramming.EqualSubsets;
-using DynamicProgramming.MinimumSubsetsDifference;
+using DynamicProgramming.Knapsack_0_1.EqualSubsets;
+using DynamicProgramming.Knapsack_0_1.Knapsack;
+using DynamicProgramming.Knapsack_0_1.MinimumSubsetsDifference;
+using DynamicProgramming.Knapsack_0_1.SubsetsCount;
+using DynamicProgramming.Knapsack_0_1.SubsetSum;
+using DynamicProgramming.Knapsack_0_1.TargetSum;
 using DynamicProgramming.UnboundedKnapsack;
+using DynamicProgramming.UnboundedKnapsack.Knapsack;
 
 namespace DynamicProgramming
 {
@@ -267,7 +270,7 @@ namespace DynamicProgramming
 
         public static void TargetSum()
         {
-            var m = new TargetSum.TargetSum();
+            var m = new TargetSum();
 
             int[] nums = { 1, 2, 7, 1 };
             int count = m.FindTargetSubsets(nums, 9);

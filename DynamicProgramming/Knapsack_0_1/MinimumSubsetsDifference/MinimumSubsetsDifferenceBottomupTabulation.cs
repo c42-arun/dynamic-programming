@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DynamicProgramming.MinimumSubsetsDifference
+namespace DynamicProgramming.Knapsack_0_1.MinimumSubsetsDifference
 {
     public class MinimumSubsetsDifferenceBottomupTabulation
     {

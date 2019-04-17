@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DynamicProgramming.UnboundedKnapsack
+namespace DynamicProgramming.UnboundedKnapsack.Knapsack
 {
     public class UnboundedKnapsack_Tabulation
     {

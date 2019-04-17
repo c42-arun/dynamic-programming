@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DynamicProgramming.Knapsack
+namespace DynamicProgramming.Knapsack_0_1.Knapsack
 {
     public class Knapsack_memoization_recursion
     {

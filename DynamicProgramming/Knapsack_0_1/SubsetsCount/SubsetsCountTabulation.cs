@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DynamicProgramming.SubsetSum
+﻿namespace DynamicProgramming.Knapsack_0_1.SubsetsCount
 {
     public class SubsetsCountTabulation
     {

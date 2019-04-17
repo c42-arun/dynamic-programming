@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DynamicProgramming.SubsetSum;
+﻿using System.Linq;
+using DynamicProgramming.Knapsack_0_1.SubsetsCount;
 
-namespace DynamicProgramming.TargetSum
+namespace DynamicProgramming.Knapsack_0_1.TargetSum
 {
     /*
      https://www.educative.io/collection/page/5668639101419520/5633779737559040/5679413765079040
