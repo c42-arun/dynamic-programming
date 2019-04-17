@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,7 +55,48 @@ namespace DynamicProgramming.UnboundedKnapsack.RodCutting
                 }
             }
 
+            GetSelections(dp, prices, lengths);
+
             return dp[lengths.Length - 1, n];
+        }
+
+        public void GetSelections(int[,] dp, int[] prices, int[] lengths)
+        {
+            int itemIndex = dp.GetLength(0) - 1;
+            int lengthIndex = dp.GetLength(1) - 1;
+
+            int targetPrice = dp[itemIndex, lengthIndex];
+
+            Console.WriteLine(targetPrice);
+
+            List<int> selecedItems = new List<int>();
+
+            while (targetPrice > 0)
+            {
+                // if current cell's value is same as top cell then it means a previous item contributed to that value
+                // so move to that cell
+                if (itemIndex >= 1 && targetPrice == dp[itemIndex - 1, lengthIndex])
+                {
+                    itemIndex--;
+                }
+                // if current cell's value is different then it means the current item did contribute
+                // so add the item to selected list, take away this item's length and price off 
+                // taking the length off would move length index (i.e column index) by current item's length
+                else
+                {
+                    selecedItems.Add(lengths[itemIndex]);
+                    lengthIndex -= lengths[itemIndex];
+                    targetPrice -= prices[itemIndex];
+                }
+            }
+
+            Console.Write("{ ");
+            foreach (int item in selecedItems)
+            {
+                Console.Write($"{item}, ");
+            }
+
+            Console.Write("} ");
         }
     }
 }
