@@ -10,6 +10,7 @@ using DynamicProgramming.Knapsack_0_1.SubsetsCount;
 using DynamicProgramming.Knapsack_0_1.SubsetSum;
 using DynamicProgramming.Knapsack_0_1.TargetSum;
 using DynamicProgramming.UnboundedKnapsack;
+using DynamicProgramming.UnboundedKnapsack.CoinChange;
 using DynamicProgramming.UnboundedKnapsack.Knapsack;
 using DynamicProgramming.UnboundedKnapsack.RodCutting;
 
@@ -53,9 +54,14 @@ namespace DynamicProgramming
             //UnboundedKnapsackTabulation();
 
             //Console.WriteLine("\nUnbounded Knapsack: Rod Cutting");
-            RodCuttingBruteForce();
-            RodCuttingMemoization();
-            RodCuttingTabulation();
+            //RodCuttingBruteForce();
+            //RodCuttingMemoization();
+            //RodCuttingTabulation();
+
+            Console.WriteLine("\nUnbounded Knapsack: Coin Change");
+            CoinChangeBruteForce();
+            CoinChangeMemoization();
+            CoinChangeTabulation();
 
             Console.ReadLine();
         }
@@ -367,7 +373,41 @@ namespace DynamicProgramming
             Console.WriteLine($"Rod cutting: Maximum profit by tabulation is:  {maxProfit}");
         }
 
-        #endregion  
+        #endregion
+
+        #region Coin Change
+        private static void CoinChangeBruteForce()
+        {
+            CoinChange_Recursion ch = new CoinChange_Recursion();
+            int[] denominations = { 1, 2, 3 };
+
+            int numOfWays = ch.CountChange(denominations, 5);
+
+            Console.WriteLine($"Coin Change: Num of ways by brute force is:  {numOfWays}");
+        }
+
+        private static void CoinChangeMemoization()
+        {
+            CoinChange_Recursion ch = new CoinChange_Recursion();
+            int[] denominations = { 5, 10, 20, 50 };
+
+            int numOfWays = ch.CountChange(denominations, 1050);
+
+            Console.WriteLine($"Coin Change: Num of ways by memoization is:  {numOfWays}");
+        }
+
+        private static void CoinChangeTabulation()
+        {
+            CoinChange_Tabulation ch = new CoinChange_Tabulation();
+            int[] denominations = { 5, 10, 20, 50 };
+
+            int numOfWays = ch.CountChange(denominations, 1050);
+
+            Console.WriteLine($"Coin Change: Num of ways by tabulation is:  {numOfWays}");
+        }
+
+        #endregion
+
         #endregion
     }
 }

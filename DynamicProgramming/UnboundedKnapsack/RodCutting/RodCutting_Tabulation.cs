@@ -81,7 +81,7 @@ namespace DynamicProgramming.UnboundedKnapsack.RodCutting
                 }
                 // if current cell's value is different then it means the current item did contribute
                 // so add the item to selected list, take away this item's length and price off 
-                // taking the length off would move length index (i.e column index) by current item's length
+                // taking the length off would move length index (i.e column index) by current item's legth
                 else
                 {
                     selecedItems.Add(lengths[itemIndex]);

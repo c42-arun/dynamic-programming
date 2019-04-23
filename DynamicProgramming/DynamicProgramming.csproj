@@ -61,6 +61,9 @@
     <Compile Include="Knapsack_0_1\SubsetSum\SubsetSumMemoizationRecursion.cs" />
     <Compile Include="Knapsack_0_1\SubsetSum\SubsetSumBruteForceRecursion.cs" />
     <Compile Include="Knapsack_0_1\TargetSum\TargetSum.cs" />
+    <Compile Include="UnboundedKnapsack\CoinChange\CoinChange_Tabulation.cs" />
+    <Compile Include="UnboundedKnapsack\CoinChange\CoinChange_Memoization.cs" />
+    <Compile Include="UnboundedKnapsack\CoinChange\CoinChange_Recursion.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Tabulation.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Memoization.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Recursion.cs" />
