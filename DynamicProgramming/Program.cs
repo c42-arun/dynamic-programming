@@ -12,6 +12,7 @@ using DynamicProgramming.Knapsack_0_1.TargetSum;
 using DynamicProgramming.UnboundedKnapsack;
 using DynamicProgramming.UnboundedKnapsack.CoinChange;
 using DynamicProgramming.UnboundedKnapsack.Knapsack;
+using DynamicProgramming.UnboundedKnapsack.MinimumCoinChange;
 using DynamicProgramming.UnboundedKnapsack.RodCutting;
 
 namespace DynamicProgramming
@@ -58,10 +59,13 @@ namespace DynamicProgramming
             //RodCuttingMemoization();
             //RodCuttingTabulation();
 
-            Console.WriteLine("\nUnbounded Knapsack: Coin Change");
-            CoinChangeBruteForce();
-            CoinChangeMemoization();
-            CoinChangeTabulation();
+            //Console.WriteLine("\nUnbounded Knapsack: Coin Change");
+            //CoinChangeBruteForce();
+            //CoinChangeMemoization();
+            //CoinChangeTabulation();
+
+            Console.WriteLine("\nUnbounded Knapsack: Minimum Coin Change");
+            MinimumCoinChangeBruteForce();
 
             Console.ReadLine();
         }
@@ -408,6 +412,18 @@ namespace DynamicProgramming
 
         #endregion
 
+        #region Minimum Coin Change
+
+        #endregion
+        private static void MinimumCoinChangeBruteForce()
+        {
+            MinimumCoinChange_Recursion ch = new MinimumCoinChange_Recursion();
+            int[] denominations = { 1, 2, 3 };
+
+            int minCoinChange = ch.CoinChange(denominations, 11);
+
+            Console.WriteLine($"Minimum Coin Change: Num of ways by brute force is:  {minCoinChange}");
+        }
         #endregion
     }
 }
