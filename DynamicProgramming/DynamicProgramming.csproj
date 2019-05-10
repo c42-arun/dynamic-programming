@@ -67,6 +67,8 @@
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Tabulation.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Memoization.cs" />
     <Compile Include="UnboundedKnapsack\Knapsack\UnboundedKnapsack_Recursion.cs" />
+    <Compile Include="UnboundedKnapsack\MinimumCoinChange\MinimumCoinChange_Tabulation.cs" />
+    <Compile Include="UnboundedKnapsack\MinimumCoinChange\MinimumCoinChange_Memoization.cs" />
     <Compile Include="UnboundedKnapsack\MinimumCoinChange\MinimumCoinChange_Recursion.cs" />
     <Compile Include="UnboundedKnapsack\RodCutting\RodCutting_Memoization.cs" />
     <Compile Include="UnboundedKnapsack\RodCutting\RodCutting_Recursion.cs" />

@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace DynamicProgramming.UnboundedKnapsack.MinimumCoinChange
 {
-    public class MinimumCoinChange_Recursion
+    public class MinimumCoinChange_Memoization
     {
         public int CoinChange(int[] denominations, int total)
         {
-            int result = this.CoinChangeRecursive(denominations, total, 0);
+            int?[,] cache = new int?[denominations.Length, total+1];
+
+            int result = this.CoinChangeRecursive(cache, denominations, total, 0);
 
             return result == int.MaxValue ? -1 : result;
         }
 
-        private int CoinChangeRecursive(int[] denominations, int remainingTotal, int currentIndex)
+        private int CoinChangeRecursive(int?[,] cache, int[] denominations, int remainingTotal, int currentIndex)
         {
             // base conditions
             if (remainingTotal == 0) return 0;
@@ -24,13 +26,19 @@ namespace DynamicProgramming.UnboundedKnapsack.MinimumCoinChange
             if (denominations.Length == 0 || currentIndex >= denominations.Length || remainingTotal < 0)
                 return int.MaxValue;
 
+            if (cache[currentIndex, remainingTotal].HasValue)
+            {
+                Console.WriteLine("Cache hit");
+                return cache[currentIndex, remainingTotal].Value;
+            }
+
             // path A: include this denomination
             int pathACoinCount = int.MaxValue;
             if (remainingTotal >= denominations[currentIndex])
             {
                 // we have an unlimited supply of coins for every denomination (unbounded knapsack) so we not increment the 
                 // index to move on to the next denomination
-                pathACoinCount = CoinChangeRecursive(denominations, remainingTotal - denominations[currentIndex],
+                pathACoinCount = CoinChangeRecursive(cache, denominations, remainingTotal - denominations[currentIndex],
                     currentIndex);
 
                 if (pathACoinCount != int.MaxValue)
@@ -38,10 +46,12 @@ namespace DynamicProgramming.UnboundedKnapsack.MinimumCoinChange
             }
 
             // path B: exclude this denomination
-            int pathBCoinCount = CoinChangeRecursive(denominations, remainingTotal, currentIndex + 1);
+            int pathBCoinCount = CoinChangeRecursive(cache, denominations, remainingTotal, currentIndex + 1);
 
             // return the minimum count of coins out of both the paths
-            return Math.Min(pathACoinCount, pathBCoinCount);
+            cache[currentIndex, remainingTotal] = Math.Min(pathACoinCount, pathBCoinCount);
+
+            return cache[currentIndex, remainingTotal].Value;
         }
     }
 }

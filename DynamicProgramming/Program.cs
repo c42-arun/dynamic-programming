@@ -66,6 +66,8 @@ namespace DynamicProgramming
 
             Console.WriteLine("\nUnbounded Knapsack: Minimum Coin Change");
             MinimumCoinChangeBruteForce();
+            MinimumCoinChangeMemoization();
+            MinimumCoinChangeTabulation();
 
             Console.ReadLine();
         }
@@ -424,6 +426,27 @@ namespace DynamicProgramming
 
             Console.WriteLine($"Minimum Coin Change: Num of ways by brute force is:  {minCoinChange}");
         }
+
+        private static void MinimumCoinChangeMemoization()
+        {
+            var ch = new MinimumCoinChange_Memoization();
+            int[] denominations = { 1, 2, 3 };
+
+            int minCoinChange = ch.CoinChange(denominations, 11);
+
+            Console.WriteLine($"Minimum Coin Change: Num of ways by memoization is:  {minCoinChange}");
+        }
+
+        private static void MinimumCoinChangeTabulation()
+        {
+            var ch = new MinimumCoinChange_Tabulation();
+            int[] denominations = { 1, 2, 3 };
+
+            int minCoinChange = ch.CoinChange(denominations, 11);
+
+            Console.WriteLine($"Minimum Coin Change: Num of ways by tabulation is:  {minCoinChange}");
+        }
+
         #endregion
     }
 }
