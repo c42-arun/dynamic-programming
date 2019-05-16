@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicProgramming.Fibonacci.FibonacciSeries;
 using DynamicProgramming.Knapsack_0_1.EqualSubsets;
 using DynamicProgramming.Knapsack_0_1.Knapsack;
 using DynamicProgramming.Knapsack_0_1.MinimumSubsetsDifference;
@@ -64,10 +65,15 @@ namespace DynamicProgramming
             //CoinChangeMemoization();
             //CoinChangeTabulation();
 
-            Console.WriteLine("\nUnbounded Knapsack: Minimum Coin Change");
-            MinimumCoinChangeBruteForce();
-            MinimumCoinChangeMemoization();
-            MinimumCoinChangeTabulation();
+            //Console.WriteLine("\nUnbounded Knapsack: Minimum Coin Change");
+            //MinimumCoinChangeBruteForce();
+            //MinimumCoinChangeMemoization();
+            //MinimumCoinChangeTabulation();
+
+            Console.WriteLine("\nFibonacci Pattern Knapsack: Fibonacci Series");
+            FibonacciSeriesBruteForce();
+            FibonacciSeriesMemoization();
+            FibonacciSeriesBottomUp();
 
             Console.ReadLine();
         }
@@ -448,5 +454,39 @@ namespace DynamicProgramming
         }
 
         #endregion
+
+        #region Fibonacci pattern
+
+        #region Fibonacci series
+        public static void FibonacciSeriesBruteForce()
+        {
+            Fibonacci_BruteForce_Recursion fib = new Fibonacci_BruteForce_Recursion();
+
+            Console.WriteLine($"Fibonacci Series by brute force is 5 -->:  {fib.CalculateFibonacci(5)}");
+            Console.WriteLine($"Fibonacci Series by brute force is 6 -->:  {fib.CalculateFibonacci(6)}");
+            Console.WriteLine($"Fibonacci Series by brute force is 7 -->:  {fib.CalculateFibonacci(7)}");
+        }
+
+        public static void FibonacciSeriesMemoization()
+        {
+            Fibonacci_Memoization_Recursion fib = new Fibonacci_Memoization_Recursion();
+
+            Console.WriteLine($"Fibonacci Series by memoization is 5 -->:  {fib.CalculateFibonacci(5)}");
+            Console.WriteLine($"Fibonacci Series by memoization is 6 -->:  {fib.CalculateFibonacci(6)}");
+            Console.WriteLine($"Fibonacci Series by memoization is 7 -->:  {fib.CalculateFibonacci(7)}");
+        }
+
+        public static void FibonacciSeriesBottomUp()
+        {
+            Fibonacci_BottomUp fib = new Fibonacci_BottomUp();
+
+            Console.WriteLine($"Fibonacci Series by bottom-up is 5 -->:  {fib.CalculateFibonacci(5)}");
+            Console.WriteLine($"Fibonacci Series by bottom-up is 6 -->:  {fib.CalculateFibonacci(6)}");
+            Console.WriteLine($"Fibonacci Series by bottom-up is 7 -->:  {fib.CalculateFibonacci(7)}");
+        }
+
+        #endregion Fibonacci series
+
+        # endregion Fibonacci pattern
     }
 }
