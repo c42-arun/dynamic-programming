@@ -46,6 +46,10 @@
     <Compile Include="Fibonacci\FibonacciSeries\Fibonacci_BottomUp.cs" />
     <Compile Include="Fibonacci\FibonacciSeries\Fibonacci_Memoization_Recursion.cs" />
     <Compile Include="Fibonacci\FibonacciSeries\Fibonacci_BruteForce_Recursion.cs" />
+    <Compile Include="Fibonacci\Staircase\Staircase_Bottomup_Optimized.cs" />
+    <Compile Include="Fibonacci\Staircase\Staircase_Bottomup.cs" />
+    <Compile Include="Fibonacci\Staircase\Staircase_Memoization.cs" />
+    <Compile Include="Fibonacci\Staircase\Staircase_Bruteforce_Recursion.cs" />
     <Compile Include="Knapsack_0_1\EqualSubsets\EqualSubsets_bottomup.cs" />
     <Compile Include="Knapsack_0_1\EqualSubsets\EqualSubsets_bruteforce_recursion.cs" />
     <Compile Include="Knapsack_0_1\EqualSubsets\EqualSubsets_memoization_recursion.cs" />
@@ -83,5 +87,6 @@
   <ItemGroup>
     <Content Include="readme.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

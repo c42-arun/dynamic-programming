@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicProgramming.Fibonacci.FibonacciSeries;
+using DynamicProgramming.Fibonacci.Staircase;
 using DynamicProgramming.Knapsack_0_1.EqualSubsets;
 using DynamicProgramming.Knapsack_0_1.Knapsack;
 using DynamicProgramming.Knapsack_0_1.MinimumSubsetsDifference;
@@ -70,10 +71,16 @@ namespace DynamicProgramming
             //MinimumCoinChangeMemoization();
             //MinimumCoinChangeTabulation();
 
-            Console.WriteLine("\nFibonacci Pattern Knapsack: Fibonacci Series");
-            FibonacciSeriesBruteForce();
-            FibonacciSeriesMemoization();
-            FibonacciSeriesBottomUp();
+            //Console.WriteLine("\nFibonacci Pattern: Fibonacci Series");
+            //FibonacciSeriesBruteForce();
+            //FibonacciSeriesMemoization();
+            //FibonacciSeriesBottomUp();
+
+            Console.WriteLine("\nFibonacci Pattern: Staircase");
+            FibonacciSeriesStaircaseBruteForce();
+            FibonacciSeriesStaircaseMemoization();
+            FibonacciSeriesStaircaseBottomup();
+            FibonacciSeriesStaircaseBottomupOptimized();
 
             Console.ReadLine();
         }
@@ -487,6 +494,43 @@ namespace DynamicProgramming
 
         #endregion Fibonacci series
 
-        # endregion Fibonacci pattern
+        #region Staircase
+        private static void FibonacciSeriesStaircaseBruteForce()
+        {
+            Staircase_Bruteforce_Recursion staircase = new Staircase_Bruteforce_Recursion();
+
+            Console.WriteLine($"Fibonacci Series - Staircase by brute force is 4 -->:  {staircase.CountWays(4)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by brute force is 5 -->:  {staircase.CountWays(5)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by brute force is 7 -->:  {staircase.CountWays(7)}");
+        }
+        private static void FibonacciSeriesStaircaseMemoization()
+        {
+            Staircase_Memoization staircase = new Staircase_Memoization();
+
+            Console.WriteLine($"Fibonacci Series - Staircase by memoization is 4 -->:  {staircase.CountWays(4)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by memoization is 5 -->:  {staircase.CountWays(5)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by memoization is 7 -->:  {staircase.CountWays(7)}");
+        }
+
+        private static void FibonacciSeriesStaircaseBottomup()
+        {
+            Staircase_Bottomup staircase = new Staircase_Bottomup();
+
+            Console.WriteLine($"Fibonacci Series - Staircase by Bottomup is 4 -->:  {staircase.CountWays(4)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by Bottomup is 5 -->:  {staircase.CountWays(5)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by Bottomup is 7 -->:  {staircase.CountWays(7)}");
+        }
+
+        private static void FibonacciSeriesStaircaseBottomupOptimized()
+        {
+            Staircase_Bottomup_Optimized staircase = new Staircase_Bottomup_Optimized();
+
+            Console.WriteLine($"Fibonacci Series - Staircase by Bottomup Optimized is 4 -->:  {staircase.CountWays(4)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by Bottomup Optimized is 5 -->:  {staircase.CountWays(5)}");
+            Console.WriteLine($"Fibonacci Series - Staircase  by Bottomup Optimized is 7 -->:  {staircase.CountWays(7)}");
+        }
+
+        #endregion
+        #endregion Fibonacci pattern
     }
 }
